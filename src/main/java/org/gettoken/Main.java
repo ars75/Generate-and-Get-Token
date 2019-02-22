@@ -28,7 +28,7 @@ public class Main {
         int securityToken = token.get(0);
         System.out.println("Token is : " + securityToken);
 
-
+        // copies token to clipboard
         StringSelection selection = new StringSelection(String.valueOf(securityToken));
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(selection, selection);
