@@ -1,5 +1,8 @@
 package org.gettoken;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,11 @@ public class Main {
         List<Integer> token = getToken.getAuthenticationToken();
         int securityToken = token.get(0);
         System.out.println("Token is : " + securityToken);
+
+
+        StringSelection selection = new StringSelection(String.valueOf(securityToken));
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(selection, selection);
 
         // print records
         // credential.printRecords(credentials);
